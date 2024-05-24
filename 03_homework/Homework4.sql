@@ -18,7 +18,7 @@ Edit the appropriate columns -- you're making two edits -- and the NULL rows wil
 All the other rows will remain the same.) */
 
 SELECT 
-product_name   ||  ', ' || coalesce(product_size, '')|| ' (' || coalesce(product_qty_type, 'unit') || ')'
+product_name   ||  ', ' || coalesce(product_size, '')|| ' (' || coalesce(product_qty_type, 'unit') || ')' as List_of_Products
 FROM  product
 
 --Windowed Functions
@@ -101,14 +101,15 @@ Remove any trailing or leading whitespaces. Don't just use a case statement for 
 Hint: you might need to use INSTR(product_name,'-') to find the hyphens. INSTR will help split the column. */
 
 SELECT 
-	product_foname
-	,SUBSTR(product_name, (INSTR(product_name, '-') + 2)) as description
+	product_name
+	,SUBSTR(product_name, (INSTR(product_name, '-')+1)) as description
 FROM product
 
 /* 2. Filter the query to show any product_size value that contain a number with REGEXP. */
 
 SELECT 
-	product_size
+	product_name
+	,product_size
 FROM product
 WHERE product_size REGEXP '[0-9]';
 

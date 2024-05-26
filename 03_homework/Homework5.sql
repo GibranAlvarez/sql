@@ -53,12 +53,16 @@ WHERE product_qty_type = 'unit';
 
 ALTER TABLE product_units ADD snapshot_timestamp CURRENT_TIMESTAMP;
 
+UPDATE product_units
+SET snapshot_timestamp = CURRENT_TIMESTAMP		
+WHERE snapshot_timestamp ISNULL;
+
 
 /*2. Using `INSERT`, add a new row to the product_units table (with an updated timestamp). 
 This can be any product you desire (e.g. add another record for Apple Pie). */
 
 INSERT INTO product_units
-VALUES(30,'Guatemalan insanity peppers - Organic','1 lb',1,'unit',NULL);
+VALUES(30,'Guatemalan insanity peppers - Organic','1 lb',1,'unit',CURRENT_TIMESTAMP);
 
 -- DELETE
 /* 1. Delete the older record for the whatever product you added. 

@@ -15,7 +15,8 @@ _Hint, search type 1 vs type 2 slowly changing dimensions._
 
 Bonus: Are there privacy implications to this, why or why not?
 ```
-Your answer...
+Your answer... Yes, the privacy implications depend on how long the information can be retained. The amount of time personal information can be retained by a business should be specified in accordance with the law and the client's consent.
+
 ```
 
 ## Question 4
@@ -23,7 +24,11 @@ Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
 
 Highlight at least two differences between it and your ERD. Would you change anything in yours?
 ```
-Your answer...
+Your answer... First, it is structured for a whole company and their different areas, which in turn increases the scope and functionality of the model.
+
+Second, the model is designed for a very different end, and it is tailormade for a specific purpose than that of the assignment, which is very basic and with the purpose of learning the basics of model desing.
+
+I will add some more formatting on the design as well as some tables and fields that could store valuable data.
 ```
 
 # Criteria
